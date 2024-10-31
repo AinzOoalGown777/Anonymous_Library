@@ -1,7 +1,7 @@
 export const librosNovela = [
     //001Another
     {
-        "id": "Novela1",
+        "id": "1Another",
         "generos": ["MISTERIO", "TERROR", "TRAGEDIA"],
         "imagen": "1WBhA3yUIuw4BQ22N_PiX_2iYHfVwPToe",
         "nombre": "Another",
@@ -134,7 +134,7 @@ export const librosNovela = [
     },
     //002Accel World
     {
-        "id": "Novela2",
+        "id": "2AccelWorld",
         "generos": ["DRAMA", "AVENTURA", "FICCION", "ACCION", "ROMANCE"],
         "imagen": "1bQpQJ45rYlU9vZN33XjS74aTmTA78UX-",
         "nombre": "Accel World",
@@ -362,7 +362,7 @@ export const librosNovela = [
     },
     //003Angel Beats
     {
-        "id": "Novela3",
+        "id": "3AngelBeats",
         "generos": ["COMEDIA", "DRAMA", "FANTASIA"],
         "imagen": "1s2lscs2kI2pD4Wex-wFgmPrakHsss5qF",
         "nombre": "Angel Beats",
@@ -386,7 +386,7 @@ export const librosNovela = [
     },
     //004Date a Live
     {
-        "id": "Novela4",
+        "id": "4DateALive",
         "generos": ["HAREM", "MECHA", "FICCION", "COMEDIA", "ROMANCE"],
         "imagen": "1g5TuoORXKTS71QdCEqE1C_aichxSuLR9",
         "nombre": "Date a Live",
@@ -411,7 +411,7 @@ export const librosNovela = [
     },
     //005Konosuba
     {
-        "id": "Novela5",
+        "id": "5Konosuba",
         "generos": ["COMEDIA", "ISEKAI", "ECCHI"],
         "imagen": "1NJq97ReeY078tGXPxX8rvnapWtpq_PRF",
         "nombre": "Konosuba",
@@ -436,7 +436,7 @@ export const librosNovela = [
     },
     //006No Game No Life
     {
-        "id": "Novela6",
+        "id": "6NoGameNoLife",
         "generos": ["AVENTURA", "ISEKAI", "ECCHI", "COMEDIA", "SOBRENATURAL", "FANTASIA"],
         "imagen": "1URHkOeT0bF8eD4SbGKSHPtH8IrvMCpCE",
         "nombre": "No Game No Life",
@@ -461,7 +461,7 @@ export const librosNovela = [
     },
     //007Overlord
     {
-        "id": "Novela7",
+        "id": "7OverLord",
         "generos": ["ACCION", "FANTASIA", "ISEKAI", "AVENTURA"],
         "imagen": "1ouhLVbRcGm_lNfG6qmxhbqswEwwl1EXr",
         "nombre": "Overlord",
@@ -486,7 +486,7 @@ export const librosNovela = [
     },
     //008Sword Art Online
     {
-        "id": "Novela8",
+        "id": "8SwordArtOnline",
         "generos": ["ROMANCE", "AVENTURA", "ACCION", "DRAMA", "FANTASIA"],
         "imagen": "1VlFCo27tY2x9Kc2RV4PCeXevVA-GCbRm",
         "nombre": "Sword Art Online",
@@ -511,7 +511,7 @@ export const librosNovela = [
     },
     //009Violet Evergarden
     {
-        "id": "Novela9",
+        "id": "9VioletEvergarden",
         "generos": ["DRAMA", "ROMANCE", "FANTASIA", "SLICE OF LIFE"],
         "imagen": "1rFnyaTiyURg7pEKNjVqlYCq1fwsXHW-V",
         "nombre": "Violet Evergarden",
@@ -535,7 +535,7 @@ export const librosNovela = [
     },
     //010Youjo Senki
     {
-        "id": "Novela10",
+        "id": "10YoujoSenki",
         "generos": ["ACCION", "DRAMA", "ISEKAI", "FICCION"],
         "imagen": "18BaSCqV32ClgpXRac4VjwIRMtPGvMCDm",
         "nombre": "Youjo Senki",
@@ -560,7 +560,7 @@ export const librosNovela = [
     },
     //011Gamers!
     {
-        "id": "Novela11",
+        "id": "11Gamers",
         "generos": ["COMEDIA", "ROMANCE", "SLICE OF LIFE"],
         "imagen": "./image/PortadaGamers.jpg",
         "nombre": "Gamers!",
@@ -1485,7 +1485,7 @@ export const librosNovela = [
     },
     //028.Vanitas no Carte
     {
-        "id": "Novela29",
+        "id": "28VanitasNoCarte",
             "generos": ["FANTASIA","SOBRENATURAL"],
             "imagen": "1toInl1B5fwQDc6aOkIzwgXw3c1077tZU",
             "nombre": "Vanitas No Carte",
