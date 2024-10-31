@@ -1,0 +1,162 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+header {
+    background-color: #f60;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    font-size: 1.5em;
+}
+
+footer {
+    background-color: #f60;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    margin-top: auto;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    padding: 20px;
+}
+
+section {
+    background-color: #1c1c1c;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    color: #fff;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.book-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Estilos para las tarjetas de libros */
+.download-link {
+    background-color: #333;
+    color: #fff;
+    width: 180px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.download-link img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: filter 0.3s ease, transform 0.3s ease; /* Transición para el efecto */
+}
+
+.download-link .info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 300px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.download-link .info h3 {
+    margin: 0 0 5px;
+    font-size: 1.2em;
+}
+
+.download-link .info p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Efectos al pasar el mouse */
+.download-link:hover {
+    transform: scale(1.05);
+}
+
+.download-link:hover img {
+    filter: blur(5px); /* Imagen de fondo difuminada */
+    transform: scale(1.1); /* Crecimiento de imagen */
+}
+
+.download-link:hover .info {
+    opacity: 1; /* Muestra el nombre y la descripción */
+}
+
+button {
+    background-color: #f60;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e55b00;
+}
+
+.arrow {
+    background-color: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 2em;
+    cursor: pointer;
+    transition: color 0.3s;
+    opacity: 0.7; /* Hace las flechas menos notorias */
+}
+
+.row-container {
+    display: flex;
+    align-items: center; /* Alinear elementos verticalmente al centro */
+}
+.arrow {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px; /* Ajusta el tamaño de las flechas según tu diseño */
+    padding: 10px; /* Ajusta el padding para espaciado */
+}
+
+.row {
+    display: flex;
+    overflow-x: auto; /* Permitir el desplazamiento horizontal */
+    scroll-behavior: smooth;
+}
+
+.download-link {
+    flex: 0 0 auto; /* Esto asegura que los elementos no se redimensionen */
+    margin: 10px;
+}
+#shadow-host-companion {
+    display: none;
+}

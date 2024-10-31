@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle"></title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            font-family: Arial, sans-serif;
+        }
+        #video-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        #video-viewer {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="video-container">
+        <iframe id="video-viewer" allowfullscreen></iframe>
+    </div>
+    <script type="module">
+        import { librosNovela } from '../Data/dataNovela.js';
+
+        let idArchivo = obtenerParametroConsulta('idArchivo');
+        let valor = obtenerParametroConsulta('valor');
+        let libro = librosNovela.find(libro => libro.id === 'Novela1'); // Suponiendo que trabajas con el primer libro para este ejemplo
+        let contenido = libro.ContenidoAnime; // Ajustar según el tipo de contenido que estás manejando
+
+        document.addEventListener('DOMContentLoaded', function () {
+            establecerTituloPelicula(valor);
+            mostrarVideo(idArchivo);
+        });
+
+        function establecerTituloPelicula(valor) {
+            const titulos = {
+                1: "ANIME",
+                5: "PELICULA",
+            };
+            document.title = titulos[valor] || document.title;
+        }
+
+        function obtenerParametroConsulta(nombre) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(nombre);
+        }
+
+        function generarEnlaceDrive(idArchivo) {
+            return 'https://drive.google.com/file/d/' + idArchivo + '/preview';
+        }
+
+        function mostrarVideo(idArchivo) {  
+            var videoViewer = document.getElementById('video-viewer');
+            videoViewer.src = generarEnlaceDrive(idArchivo);
+            window.history.pushState({}, '', `?idArchivo=${idArchivo}&valor=${valor}`);
+        }
+    </script>
+</body>
+</html>

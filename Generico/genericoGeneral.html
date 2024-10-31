@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="../styles/stylesSecundario.css">
+</head>
+<body>
+    <div id="informacionLibro" class="libro-container">
+        <div class="imagen-container">
+            <img src="" id="imagenLibro">
+        </div>
+        <div class="informacion-container">
+            <h2 id="nombreLibro"></h2>
+            <p id="estadoLibro"></p>
+            <p id="tomosLibro"></p>
+            <p id="resumenLibro"></p>
+            <div id="botonesContenido" class="botones-contenido">
+                <button id="btnAnime">Anime</button>
+                <button id="btnManga">Manga</button>
+                <button id="btnNovela">Novela</button>
+                <button id="btnPelicula">Película</button>
+                <button id="btnDoujinshi">Doujinshi</button>
+            </div>
+            <div id="pdfButtons" class="pdf-buttons-container buttons-row"></div>
+        </div>
+    </div>
+    <script type="module">
+        import { librosNovela } from '../Data/dataNovela.js';
+
+        function buscarLibroPorId(idLibro) {
+            return librosNovela.find(libro => libro.id === idLibro);
+        }
+
+        document.addEventListener('DOMContentLoaded', async function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const idLibro = urlParams.get('id');
+            const libro = buscarLibroPorId(idLibro);
+            mostrarInformacionLibro(libro);
+            mostrarContenido('ContenidoAnime', libro);
+        });
+
+        function mostrarInformacionLibro(libro) {
+            document.getElementById('nombreLibro').textContent = libro.nombre;
+            document.title = libro.nombre;
+            let imagenLibro = document.getElementById('imagenLibro');
+            const googleDriveId = libro.imagen;
+            imagenLibro.src = `https://lh3.googleusercontent.com/d/${googleDriveId}`;
+            imagenLibro.alt = libro.nombre;
+            document.getElementById('resumenLibro').textContent = `Resumen: ${libro.resumen}`;
+            configurarBotones(libro);
+        }
+
+        function configurarBotones(libro) {
+            document.getElementById('btnAnime').addEventListener('click', function () {
+                mostrarContenido('ContenidoAnime', libro);
+            });
+            document.getElementById('btnManga').addEventListener('click', function () {
+                mostrarContenido('ContenidoManga', libro);
+            });
+            document.getElementById('btnNovela').addEventListener('click', function () {
+                mostrarContenido('ContenidoNovela', libro);
+            });
+            document.getElementById('btnPelicula').addEventListener('click', function () {
+                mostrarContenido('ContenidoPelicula', libro);
+            });
+            document.getElementById('btnDoujinshi').addEventListener('click', function () {
+                mostrarContenido('ContenidoDoujinshi', libro);
+            });
+        }
+
+        function mostrarContenido(tipoContenido, libro) {
+            const pdfButtonsContainer = document.getElementById('pdfButtons');
+            pdfButtonsContainer.innerHTML = ''; 
+            
+            const contenidoSeleccionado = libro[tipoContenido];
+            if (contenidoSeleccionado) {
+                Object.keys(contenidoSeleccionado).forEach(clave => {
+                    const { numero, codigo, texto, imagen } = contenidoSeleccionado[clave];
+                    const divContenido = crearPdfButton(numero, codigo, texto, imagen, tipoContenido.replace('Contenido', ''), clave);
+                    pdfButtonsContainer.appendChild(divContenido);
+                });
+            }
+        }
+
+        function crearPdfButton(numero, codigo, texto, imagenSrc, tipoContenido, clave) {
+            const divContenido = document.createElement('div');
+            divContenido.classList.add('pdf-button');
+            const img = document.createElement('img');
+            const googleDriveId = imagenSrc;
+            img.src = `https://lh3.googleusercontent.com/d/${googleDriveId}`;
+            img.alt = tipoContenido;
+            const nombreDiv = document.createElement('div');
+            nombreDiv.textContent = clave;
+            nombreDiv.classList.add('button-name');
+            divContenido.appendChild(img);
+            divContenido.appendChild(nombreDiv);
+            divContenido.addEventListener('click', function () {
+                switch (numero) {
+                    case 1:
+                        window.location.href = `./genericoVideo.html?idArchivo=${codigo}&valor=${numero}`;
+                        break;
+                    case 2:
+                        window.location.href = `./genericoLectura.html?idArchivo=${codigo}&valor=${numero}`;
+                        break;
+                    case 3:
+                        window.location.href = `./genericoLectura.html?idArchivo=${codigo}&valor=${numero}`;
+                        break;
+                    case 4:
+                        window.location.href = `./genericoVideo.html?idArchivo=${codigo}&valor=${numero}`;
+                        break;
+                    case 5:
+                        window.location.href = `./genericoLectura.html?idArchivo=${codigo}&valor=${numero}`;
+                        break;
+                }
+            });
+        
+            return divContenido;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+body {
+    font-size: 18px;
+    background-color: #2C3E50; /* Fondo de color gris-azul */
+    color: #ECF0F1; /* Texto blanco */
+    font-family: 'Arial', sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.libro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    background-color: #34495E; /* Fondo de color gris oscuro */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imagen-container img {
+    max-width: 400px; /* Establece el ancho máximo de las imágenes */
+    height: auto; /* Ajusta automáticamente la altura según el ancho */
+    border: 2px solid #2C3E50;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.informacion-container {
+    max-width: 70%; /* Ajusta el ancho máximo de la información */
+}
+
+h2 {
+    margin: 10px 0;
+    color: #3498DB; /* Color azul para los títulos */
+}
+
+p {
+    margin: 5px 0;
+}
+
+.pdf-buttons-container {
+    margin-top: 20px;
+}
+
+#pdfButtons {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones se envuelvan si no hay suficiente espacio */
+    gap: 10px;
+    justify-content: center;
+}
+
+#pdfButtons button {
+    width: 120px;
+    padding: 10px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #3498DB;
+    color: #ECF0F1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#pdfButtons button:hover {
+    background-color: #2980B9; /* Cambia el color al pasar el ratón */
+}

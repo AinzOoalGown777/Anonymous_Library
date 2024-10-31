@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle"></title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #pdf-container {
+            width: 900px; /* O el ancho que desees */
+            height: 650px;
+            margin: 0 auto; /* Esto centra el contenedor horizontalmente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        #pdf-viewer {
+            width: 100%;
+            height: 100%;
+        }
+
+        #boton-descarga {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 10px; /* Ajusta el margen según tus necesidades */
+            padding: 10px;
+            background-color: #fff; /* Fondo blanco para el botón */
+            color: #000; /* Texto negro para el botón */
+            border: 2px solid #fff; /* Borde blanco para el botón */
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        #mensaje-temporal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="mensaje-temporal">Para poder desplazarse, presiona la barra lateral. ¡Gracias!</div>
+    <div id="pdf-container">
+        <iframe id="pdf-viewer" src="" frameborder="0" scrolling="no"></iframe>
+        <button id="boton-descarga" onclick="descargarPDFDesdeDrive()">Descargar</button>
+    </div>
+
+    <script>
+        var idArchivo = obtenerParametroConsulta('idArchivo');
+        var valor = obtenerParametroConsulta('valor');
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Muestra el mensaje temporal
+            mostrarMensajeTemporal();
+
+            // Llamada a la función con el ID del archivo PDF en Google Drive
+            establecerTituloPelicula(valor)
+            mostrarPDF(idArchivo);
+        });
+
+        function establecerTituloPelicula(valor) {
+            console.log(valor);
+            const titulos = {
+                2: "MANGA",
+                3: "NOVELA",
+                4: "DOUJINSHI",
+            };
+        
+            document.title = titulos[valor] || document.title;
+        }
+
+        // Función para mostrar el mensaje temporal
+        function mostrarMensajeTemporal() {
+            var mensajeTemporal = document.getElementById('mensaje-temporal');
+            mensajeTemporal.style.display = 'block';
+
+            // Oculta el mensaje después de 5 segundos (5000 milisegundos)
+            setTimeout(function () {
+                mensajeTemporal.style.display = 'none';
+            }, 5000);
+        }
+
+        function obtenerParametroConsulta(nombre) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(nombre);
+        }
+
+        // Función para generar el enlace de visualización del PDF en Google Drive
+        function generarEnlaceDrive(idArchivo) {
+            return 'https://drive.google.com/file/d/' + idArchivo + '/preview';
+        }
+
+        // Función para cargar y mostrar el PDF desde Google Drive
+        function mostrarPDF(idArchivo) {
+            // Objeto de visor de PDF mediante Google Drive
+            var pdfViewer = document.getElementById('pdf-viewer');
+            pdfViewer.src = generarEnlaceDrive(idArchivo);
+        }
+
+        // Función para descargar el PDF desde Google Drive
+        function descargarPDFDesdeDrive() {
+            // Reemplaza el ID del archivo en el enlace con el tuyo
+            var fileId = obtenerParametroConsulta('idArchivo');
+            
+            // Construye el enlace directo al archivo
+            var enlaceDirecto = `https://drive.google.com/uc?id=${fileId}`;
+            
+            // Crea un elemento <a> con el atributo download
+            var enlaceDescarga = document.createElement('a');
+            enlaceDescarga.href = enlaceDirecto;
+            enlaceDescarga.download = "nombre-del-archivo.pdf"; // Puedes establecer el nombre del archivo aquí
+
+            // Agrega el enlace al cuerpo del documento
+            document.body.appendChild(enlaceDescarga);
+
+            // Simula un clic en el enlace para iniciar la descarga
+            enlaceDescarga.click();
+
+            // Elimina el enlace después de la descarga
+            document.body.removeChild(enlaceDescarga);
+        }
+
+    </script>
+</body>
+</html>
