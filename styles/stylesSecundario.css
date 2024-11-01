@@ -167,6 +167,21 @@ p {
 .pdf-buttons-container .pdf-button .button-name {
     display: block;
 }
+.manga-style .pdf-button {
+    height: 280px; /* Aumenta la altura de los botones de manga */
+}
+
+.manga-style .pdf-button img {
+    max-height: 120px; /* Ajusta la altura máxima de la imagen si es necesario */
+}
+
+.pdf-buttons-container .pdf-button img {
+    max-width: 100%;   /* Mantiene la imagen dentro del ancho del botón */
+    height: auto;      /* Mantiene la proporción de la imagen */
+    max-height: 260px; /* Aumenta la altura máxima de la imagen */
+    object-fit: cover; /* Cubre el área asignada manteniendo la proporción */
+    border-radius: 5px; /* Redondea las esquinas de la imagen */
+}
 
 .row {
     display: flex;

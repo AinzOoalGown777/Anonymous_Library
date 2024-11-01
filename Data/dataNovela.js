@@ -1652,7 +1652,263 @@ export const librosNovela = [
     },
     //029
     {
-        "id": "Novela28",
+        "id": "29AkameGaKill",
+            "generos": ["ACCION","ROMANCE","AVENTURA","DRAMA"],
+            "imagen": "1wKtw7Gjlskoaa4SPmpFm5cX3cEAr8aIX",
+            "nombre": "AKAME GA KILL",
+            "resumen": "Night Raid es la rama secreta del asesinato del ejército revolucionario, una revuelta reunida para derrocar al primer ministro honesto, cuya codicia y codicia para el poder lo llevaron a disfrutar de la inexperiencia del emperador del niño. Sin un líder fuerte y benevolente, el resto de la nación se ahoga en la pobreza, el conflicto y la ruina. Aunque los miembros de la redada nocturna son todos asesinos experimentados, entienden que tomar vidas está lejos de ser dignas de elogio y probablemente enfrentarán una retribución, ya que eliminan a cualquiera que esté en camino a la revolución sin piedad.",
+            "valor": "",
+            "ContenidoAnime": {
+                "CAPITULO 1": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 2": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 3": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 4": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 5": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 6": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 7": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 8": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 9": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 10": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 11": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 12": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 13": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 14": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 15": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 16": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 17": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 18": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 19": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 20": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 21": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 22": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 23": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+                "CAPITULO 24": {
+                    "numero": 1,
+                    "codigo": "1kX1uBcWuD7E3vPaSTnHbqbnm4oQTBaYH",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "17pcdbut2KC-cqqrEz3Ybpv_RvlUEAB5_"
+                },
+            },
+            "ContenidoManga": {
+                "TOMO 1": {
+                    "numero": 2,
+                    "codigo": "1SqAHRp-9TJMYEmCpPDqbVtyZrs8aXajJ",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "1sCnXNU4-RNfaSA0-m7UaLa8T0LpAOZ3E"
+                },
+                "TOMO 2": {
+                    "numero": 2,
+                    "codigo": "1TCCpFtAKHt5nIpVd56uq0JZGWVU81Vx4",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "1mYnu0NHYlo-IPk13Q2KFJ-pGqJkR1pLz"
+                },
+                "TOMO 3": {
+                    "numero": 2,
+                    "codigo": "1f3E-vzPdhNyvgLil7eoq4AgZeQnICVEg",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "1n56xTdqXgkyjaTWwcrsWesQEQnDWwpaX"
+                },
+                "TOMO 4": {
+                    "numero": 2,
+                    "codigo": "1zc-WTBDssEQ6-nQD-rqAMOgXAbTcpbpe",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "1A6xay58ENgY21x5hoISRWc1ZNf2t4dTb"
+                },
+                "TOMO 5": {
+                    "numero": 2,
+                    "codigo": "1G8o-B7f58_FYFBQNlJfl7pdk10SJ3aA5",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "1hiHV71rZRTbJA75l87sQj_3ctZRkXzFZ"
+                },
+                "TOMO 6": {
+                    "numero": 2,
+                    "codigo": "19p4nf18QW9hWah2wy31bagKbAH7FrVWT",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "1VD4tOMGhE-DNsJ7TrBb5gQk8GSyLm7mZ"
+                },
+                "TOMO 7": {
+                    "numero": 2,
+                    "codigo": "1hP9ZMvP8YDH5VYbPZ6KEFTQirn5Z0bOQ",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "1qISWpG3HWuOmdo5GZKyhCE3p0REvq-r0"
+                },
+                "TOMO 8": {
+                    "numero": 2,
+                    "codigo": "1TxYTFfiQZqbXVZUxtw7TiNj__Ukeu53z",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "1AR85SJ3_qeqUsU3lEczhZe1xSKBMVquW"
+                },
+                "TOMO 9": {
+                    "numero": 2,
+                    "codigo": "1cGeucy7-6lGsIAFxsXeLHgUK6X7BtqPN",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "1WLfC8mnJ_3fdoQ97ZVuP-WqgIplX4Jdo"
+                },
+                "TOMO 10": {
+                    "numero": 2,
+                    "codigo": "1ZjmRb_LrMPBuGvkxUyrOpjt4Wm9pkdn2",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "1pMCdNuahFKhr3hvwoRv-O-skoQNe55Aw"
+                },
+                "TOMO 11": {
+                    "numero": 2,
+                    "codigo": "1SqyhSSSnvm65Agpba2eKUY_fU2rKkz_z",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "1HuCbDx7UtqsckF40fDx-QT0QIh4-T0Te"
+                },
+                "TOMO 12": {
+                    "numero": 2,
+                    "codigo": "1g-pcNOdVmYOzj1ILnhSFRabHnKkxi4Dv",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "1wDHKuYjZbGLio0NAPuTdf7cdDfWyEr4E"
+                },
+                "TOMO 13": {
+                    "numero": 2,
+                    "codigo": "1sVHzjELYk7aPdt2XAobmMkm7C0xQGpIC",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "1m3tl6RLvKs1fOnoWjP4dGMktazs2ZSxX"
+                },
+                "TOMO 14": {
+                    "numero": 2,
+                    "codigo": "1Xzh9ptRWm80jtMg-0jHY2V16kXRwFXLg",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "1A_kDVuUPLwPRCOBhGWuwSrGw2pa_l3BM"
+                },
+                "TOMO 15": {
+                    "numero": 2,
+                    "codigo": "1DDmX517VqlW3Nksssz50I0Z8OMv5jei9",
+                    "texto": "Vanitas y el caso de Rusty Hopes",
+                    "imagen": "1lX2BzOOW-ZcCj3xxm5yWIzoIH9IwD3v3"
+                },
+            },
+            "ContenidoNovela": {
+                "VOLUMEN 1": "", 
+            },
+            "ContenidoPelicula": {
+                "PELICULA 1": "",
+            },
+            "ContenidoDoujinshi": {
+                "HISTORIA 1": "",
+            },
+    },
+    //030
+    {
+        "id": "Novela29",
             "generos": [],
             "imagen": "./image/Portada.jpg",
             "nombre": "",
