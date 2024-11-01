@@ -70,7 +70,11 @@
         function mostrarContenido(tipoContenido, libro) {
             const pdfButtonsContainer = document.getElementById('pdfButtons');
             pdfButtonsContainer.innerHTML = ''; 
-            
+            if (tipoContenido === 'ContenidoManga') {
+                pdfButtonsContainer.classList.add('manga-style');
+            } else {
+                pdfButtonsContainer.classList.remove('manga-style');
+            }
             const contenidoSeleccionado = libro[tipoContenido];
             if (contenidoSeleccionado) {
                 Object.keys(contenidoSeleccionado).forEach(clave => {
@@ -80,6 +84,7 @@
                 });
             }
         }
+        
 
         function crearPdfButton(numero, codigo, texto, imagenSrc, tipoContenido, clave) {
             const divContenido = document.createElement('div');
