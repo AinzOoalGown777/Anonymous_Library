@@ -6,97 +6,145 @@ document.addEventListener('DOMContentLoaded', Iniciar);
 
 function Iniciar() {
     const genreForm = document.getElementById('NovelaGenreForm');
+    const searchInput = document.getElementById('searchInput');
     const libros = librosNovela;
 
-    organizarLibrosEnEstante(libros, bookShelfNovela);
+    const select = document.createElement('select');
+    select.setAttribute('name', 'generos[]');
+    select.classList.add('genre-dropdown');
 
-    genreForm.addEventListener('change', () => realizarBusqueda(libros, bookShelfNovela));
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '';
+    defaultOption.textContent = 'Selecciona un género';
+    select.appendChild(defaultOption);
+
+    generos.forEach(g => {
+        const option = document.createElement('option');
+        option.value = g;
+        option.textContent = g;
+        select.appendChild(option);
+    });
+
+    genreForm.appendChild(select);
+
+    organizarLibrosEnEstante(libros, bookShelfNovela);  // Muestra todos los géneros al iniciar
+
+    select.addEventListener('change', () => realizarBusqueda(libros, bookShelfNovela, searchInput.value));
+    searchInput.addEventListener('input', debounce(() => realizarBusqueda(libros, bookShelfNovela, searchInput.value), 300));
 }
 
-function realizarBusqueda(libros, bookShelf) {
-    const generoSeleccionado = document.querySelector('input[name="generos[]"]:checked');
-    const genero = generoSeleccionado ? generoSeleccionado.value.toLowerCase() : '';
-    const librosFiltrados = libros.filter(libro => 
-        genero === '' || libro.generos.map(g => g.toLowerCase()).includes(genero)
-    );
-    
-    organizarLibrosEnEstante(librosFiltrados, bookShelf);
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
 }
 
-function organizarLibrosEnEstante(libros, bookShelf) {
+function realizarBusqueda(libros, bookShelf, searchTerm) {
+    const selectGenero = document.querySelector('select[name="generos[]"]');
+    const generoSeleccionado = selectGenero.value.toLowerCase();
+
+    const librosFiltrados = libros.filter(libro => {
+        const nombreCoincide = libro.nombre.toLowerCase().includes(searchTerm.toLowerCase());
+        const generoCoincide = generoSeleccionado === '' || libro.generos.map(g => g.toLowerCase()).includes(generoSeleccionado);
+        return nombreCoincide && generoCoincide;
+    });
+
+    organizarLibrosEnEstante(librosFiltrados, bookShelf, generoSeleccionado);
+}
+
+function organizarLibrosEnEstante(libros, bookShelf, generoSeleccionado = '') {
     bookShelf.innerHTML = '';
-    const librosPorGenero = {};
 
-    libros.forEach(libro => {
-        libro.generos.forEach(genero => {
-            if (!librosPorGenero[genero]) {
-                librosPorGenero[genero] = [];
-            }
-            librosPorGenero[genero].push(libro);
-        });
-    });
+    if (generoSeleccionado !== '') {
+        const librosFiltradosPorGenero = libros.filter(libro =>
+            libro.generos.map(g => g.toLowerCase()).includes(generoSeleccionado)
+        );
+        mostrarGenero(librosFiltradosPorGenero, bookShelf, generoSeleccionado.toUpperCase());
+    } else {
+        const librosPorGenero = {};
 
-    const shuffledGenres = shuffleArray(Object.keys(librosPorGenero));
-
-    shuffledGenres.forEach(genero => {
-        const generoElemento = document.createElement('div');
-        generoElemento.classList.add('genre-row');
-
-        const tituloGenero = document.createElement('h2');
-        tituloGenero.textContent = genero;
-        generoElemento.appendChild(tituloGenero);
-
-        const contenedorElemento = document.createElement('div');
-        contenedorElemento.classList.add('row-container');
-
-        const filaElemento = document.createElement('div');
-        filaElemento.classList.add('row');
-        filaElemento.style.display = 'flex';
-        filaElemento.style.overflowX = 'hidden';
-
-        const arrowLeft = document.createElement('button');
-        arrowLeft.classList.add('arrow', 'left-arrow');
-        arrowLeft.innerHTML = '&#9664;';
-        arrowLeft.onclick = () => scrollBooks(filaElemento, -1);
-        contenedorElemento.appendChild(arrowLeft);
-
-        const shuffledBooks = shuffleArray(librosPorGenero[genero]);
-
-        shuffledBooks.forEach(libro => {
-            const libroElemento = document.createElement('div');
-            const infoElemento = document.createElement('div');
-
-            libroElemento.classList.add('download-link');
-            libroElemento.setAttribute('id', libro.id);
-            libroElemento.setAttribute('data-generos', JSON.stringify(libro.generos));
-
-            const imagenElemento = document.createElement('img');
-            imagenElemento.src = `https://lh3.googleusercontent.com/d/${libro.imagen}`;
-            imagenElemento.alt = libro.nombre;
-            imagenElemento.addEventListener('click', () => window.location.href = `./Generico/genericoGeneral.html?id=${libro.id}`);
-
-            const h3Elemento = document.createElement('h3');
-            h3Elemento.textContent = libro.nombre;
-
-            infoElemento.classList.add('info');
-            infoElemento.appendChild(h3Elemento);
-            infoElemento.addEventListener('click', () => window.location.href = `./Generico/genericoGeneral.html?id=${libro.id}`);
-
-            libroElemento.appendChild(imagenElemento);
-            libroElemento.appendChild(infoElemento);
-            filaElemento.appendChild(libroElemento);
+        libros.forEach(libro => {
+            libro.generos.forEach(genero => {
+                if (!librosPorGenero[genero]) {
+                    librosPorGenero[genero] = [];
+                }
+                librosPorGenero[genero].push(libro);
+            });
         });
 
-        const arrowRight = document.createElement('button');
-        arrowRight.classList.add('arrow', 'right-arrow');
-        arrowRight.innerHTML = '&#9654;';
-        arrowRight.onclick = () => scrollBooks(filaElemento, 1);
-        contenedorElemento.appendChild(filaElemento);
-        contenedorElemento.appendChild(arrowRight);
+        const shuffledGenres = shuffleArray(Object.keys(librosPorGenero));
 
-        generoElemento.appendChild(contenedorElemento);
-        bookShelf.appendChild(generoElemento);
+        shuffledGenres.forEach(genero => {
+            mostrarGenero(librosPorGenero[genero], bookShelf, genero.toUpperCase());
+        });
+    }
+}
+
+
+function mostrarGenero(libros, bookShelf, genero) {
+    const generoElemento = document.createElement('div');
+    generoElemento.classList.add('genre-row');
+
+    const tituloGenero = document.createElement('h2');
+    tituloGenero.textContent = genero;
+    generoElemento.appendChild(tituloGenero);
+
+    const contenedorElemento = document.createElement('div');
+    contenedorElemento.classList.add('row-container');
+
+    const filaElemento = document.createElement('div');
+    filaElemento.classList.add('row');
+    filaElemento.style.display = 'flex';
+    filaElemento.style.overflowX = 'hidden';
+
+    const arrowLeft = document.createElement('button');
+    arrowLeft.classList.add('arrow', 'left-arrow');
+    arrowLeft.innerHTML = '&#9664;';
+    arrowLeft.onclick = () => scrollBooks(filaElemento, -1);
+    contenedorElemento.appendChild(arrowLeft);
+
+    const shuffledBooks = shuffleArray(libros);
+
+    shuffledBooks.forEach(libro => {
+        const libroElemento = document.createElement('div');
+        const infoElemento = document.createElement('div');
+
+        libroElemento.classList.add('download-link');
+        libroElemento.setAttribute('id', libro.id);
+        libroElemento.setAttribute('data-generos', JSON.stringify(libro.generos));
+
+        const imagenElemento = document.createElement('img');
+        imagenElemento.src = `https://lh3.googleusercontent.com/d/${libro.imagen}`;
+        imagenElemento.alt = libro.nombre;
+        imagenElemento.addEventListener('click', () => window.location.href = `./Generico/genericoGeneral.html?id=${libro.id}`);
+
+        const h3Elemento = document.createElement('h3');
+        h3Elemento.textContent = libro.nombre;
+
+        infoElemento.classList.add('info');
+        infoElemento.appendChild(h3Elemento);
+        infoElemento.addEventListener('click', () => window.location.href = `./Generico/genericoGeneral.html?id=${libro.id}`);
+
+        libroElemento.appendChild(imagenElemento);
+        libroElemento.appendChild(infoElemento);
+        filaElemento.appendChild(libroElemento);
     });
+
+    const arrowRight = document.createElement('button');
+    arrowRight.classList.add('arrow', 'right-arrow');
+    arrowRight.innerHTML = '&#9654;';
+    arrowRight.onclick = () => scrollBooks(filaElemento, 1);
+    contenedorElemento.appendChild(filaElemento);
+    contenedorElemento.appendChild(arrowRight);
+
+    generoElemento.appendChild(contenedorElemento);
+    bookShelf.appendChild(generoElemento);
 }
 
 function scrollBooks(row, direction) {

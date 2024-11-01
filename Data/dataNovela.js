@@ -562,7 +562,7 @@ export const librosNovela = [
     {
         "id": "11Gamers",
         "generos": ["COMEDIA", "ROMANCE", "SLICE OF LIFE"],
-        "imagen": "./image/PortadaGamers.jpg",
+        "imagen": "13l8gk39nHQaS5nRG0aWnfcFWSNbOFf1Q",
         "nombre": "Gamers!",
         "resumen": "La historia gira en torno a ciertos estudiantes y un pasatiempo, Keita Amano es nuestro protagonista solitario que tiene una pasión por los juegos y es amigo de Tasuku Uehara, quien es secretamente un compañero de juego y es alguien que cree que su vida es perfecta.",
         "valor": "",
@@ -585,9 +585,9 @@ export const librosNovela = [
     },
     //012Infinite Stratos
     {
-        "id": "Novela12",
+        "id": "12InfiniteStratos",
         "generos": ["FICCION", "COMEDIA", "ROMANCE", "HAREM"],
-        "imagen": "./image/PortadaInfiniteStratos.jpg",
+        "imagen": "1pdDfb-LOjt74zPaBw2Wms7mABcXy3_LR",
         "nombre": "Infinite Stratos",
         "resumen": "Infinite Stratos se situa en un mundo futurista, en el cual se a llegado a un estado de paz mundial, debido a la creacion de un exoesqueleto tipo mecha llamado Infinite Stratos, el cual cuenta con diferentes tipos de armamento y poderes.",
         "valor": "",
@@ -610,9 +610,9 @@ export const librosNovela = [
     },
     //013Black Bullet
     {
-        "id": "Novela13",
+        "id": "13BlackBullet",
         "generos": ["ACCION", "DRAMA", "MISTERIO", "FICCION", "TRAGEDIA"],
-        "imagen": "./image/PortadaBlackBullet.jpg",
+        "imagen": "1iDWl4woh6mWztvVx9kSmlzz5G1YBMTOS",
         "nombre": "Black Bullet",
         "resumen": "En el año 2021, la humanidad es atacada y diezmada por la epidemia Gastrea, un virus parásito que se manifiesta en forma de monstruos gigantes con aspecto de insectos, y se ven obligados a vivir dentro de las paredes de El monolito, un territorio que se crea a partir de Varanium: un metal negro que es capaz de someter ...",
         "valor": "",
@@ -635,9 +635,9 @@ export const librosNovela = [
     },
     //014Classroom of the Elite
     {
-        "id": "Novela14",
+        "id": "14ClassroomOfTheElite",
         "generos": ["COMEDIA", "DRAMA", "ACCION"],
-        "imagen": "./image/PortadaClassroomOfTheElite.jpg",
+        "imagen": "1SoiuBFG15Z-ZLNUZhSbsJ3A3CSxIbNpo",
         "nombre": "Classroom of the Elite",
         "resumen": "La historia se centra en los estudiantes de una escuela de Tokio fundada por el gobierno japonés con el fin de formar a los jóvenes que en el futuro serán el sustento institucional del país. La metodología de la enseñanza de esta escuela es poco convencional, puesto que los estudiantes residen en la misma, apartados del resto de la sociedad, y por medio del estudio y su comportamiento se auto sustentan, utilizando puntos de calificación como dinero. La clase se divide en cuatro categorías (A, B, C y D), en el que la A es la de mayor nivel de inteligencia y destreza, y la D siendo la de menores atributos.",
         "valor": "",
@@ -660,9 +660,9 @@ export const librosNovela = [
     },
     //015Milk Princess
     {
-        "id": "Novela15",
+        "id": "15MilkPrincess",
         "generos": ["ECCHI", "FANTASIA", "HAREM"],
-        "imagen": "./image/PortadaMilkPrincess.jpg",
+        "imagen": "145p-IQJIlaxtAVyzEF_iia88yAqyxaER",
         "nombre": "Milk Princess",
         "resumen": "Esta novela trata sobre un niño que rescata a dos princesas y se introduce en su cultura de la leche que se centra en torno a la leche materna, entre otras cosas.",
         "valor": "",
@@ -685,9 +685,9 @@ export const librosNovela = [
     },
     //016Kaifuku Jutsushi
     {
-        "id": "Novela16",
+        "id": "16KaifukuJutsushi",
         "generos": ["AVENTURA", "HAREM", "ECCHI", "ACCION", "FANTASIA"],
-        "imagen": "./image/PortadaKaifukuJutsushi.jpg",
+        "imagen": "1bCmJNoNfAhO_wxRJzTGXLOEKiPyhfyJ1",
         "nombre": "Kaifuku Jutsushi",
         "resumen": "Keyaruga, quien siempre ha sido atormentado por esta lógica, fue explotado una y otra vez por otros. Un día notó lo que había más allá de la magia de curación, y se convenció de que los hechiceros sanadores son la clase más fuerte de todas. No obstante, cuando descubrió este potencial ya era demasiado tarde. Por lo tanto, decide retroceder en el tiempo por cuatro años, dispuesto a rehacer su vida. Esta es la historia heroica del hechicero sanador que se convirtió en el guerrero más fuerte, utilizando el conocimiento de su vida pasada y la magia de curación.",
         "valor": "",
@@ -710,9 +710,9 @@ export const librosNovela = [
     },
     //017Harem Wedding
     {
-         "id": "Novela17",
+         "id": "17HaremWedding",
         "generos": ["ECCHI", "FANTASIA"],
-        "imagen": "./image/PortadaHaremWedding.jpg",
+        "imagen": "1PkWD2Ynhd31Bd1BgklEYmppeGjwEp3RU",
         "nombre": "Harem Wedding",
         "resumen": "Se espera que Kalshid, un joven caballero de una familia prominente, se case con una de las princesas del Reino de Domos, Kramish, y herede su casa. Sin embargo, Kramish odia a los hombres y se opone ferozmente al matrimonio. Está perdido, pero Tiffane, la madre de Kramish, ¡le enseña lo que significa el ser llamado mujer! Tiffane usa su cuerpo maduro que sólo una mujer casada puede tener y le enseña a Kalshid cómo hacer el amor con una mujer. Kalshid experimenta un intenso juego sexual y es quitado de su virginidad. Luego, le roba su pareja, la espadachina de piel marrón Dollyria, a la compañera de juegos de Kramish, y tiene sexo con ella para lucirse y hacerle el amor. También hace que su subordinada, Luciana, que estaba en veremos ponerle las manos encima a Kalshid, se lo haga con sus grandes tetas. Después de una gran batalla contra el enemigo, Kalshid y Kramish, terminan compartiendo sus corazones…",
         "valor": "",
@@ -734,9 +734,9 @@ export const librosNovela = [
     },
     //018Kyou Tonari
     {
-        "id": "Novela18",
+        "id": "18Kyou Tonari",
         "generos": ["ROMANCE", "DRAMA", "FANTASIA"],
-        "imagen": "./image/PortadaKyouTonari.jpg",
+        "imagen": "1VNdlUcmJkghQSQQhZ9BKYx_mPvdpDYJH",
         "nombre": "Kyou Tonari",
         "resumen": "Asagiri Rin, una bella chica de cabello negro, es una chica que nunca sonríe. Siempre evita hacer amistades con los demás; levantando un muro invisible, impidiendo que se acerquen a ella. Pero, dentro de su corazón, muy en el fondo, quisiera que los demás la comprendan… El día en que ella me mostraba por primera vez su sonrisa, desapareció, y no solo de mi vista, todas las personas que me rodean no la recuerdan. Como si sólo sus recuerdos hubieran desaparecido de la mente de todos. Ese día, perdí todo…",
         "valor": "",
@@ -758,9 +758,9 @@ export const librosNovela = [
     },
     //019Magika No Kenshi
     {
-        "id": "Novela19",
+        "id": "19MagikaNoKenshi",
         "generos": ["ACCION", "COMEDIA", "ECCHI", "FANTASIA", "HAREM", "SOBRENATURAL"],
-        "imagen": "./image/PortadaMagikaNoKenshi.jpg",
+        "imagen": "1RIiyHLNGrtRfYYHzQTS2f2lZQ1Fn1DU8",
         "nombre": "Magika No Kenshi",
         "resumen": "Hace 15 años el mundo descubrió la magia, además de los seres míticos en otra dimensión. Los humanos aprendieron a invocar a estos peligrosos seres míticos y usar sus poderes para un gran efecto. Siete países formaron contratos con estos “dioses” y ganaron su lealtad como resultado. Los dioses escogerán a su invocador en su 14° cumpleaños y les darán su estigma. Debido a esto se han establecido escuelas para entrenar a los invocadores y espadachines mágicos. 15 años después de descubrir la magia, Kazuki Hayashizaki es escogido como invocador y se le dio el estigma que lo identifica como tal. Esto es sorprendente porque los hombres no son escogidos como invocadores debido a su baja cantidad de mana comparado con las mujeres. Como el primer hombre en convertirse en un invocador Kazuki esta bajo el ojo crítico de casi todos.",
         "valor": "",
@@ -783,9 +783,9 @@ export const librosNovela = [
     },
     //020Maou Na Ore
     {
-        "id": "Novela20",
+        "id": "20MaouNaOre",
         "generos": ["ACCION", "COMEDIA", "ECCHI", "FANTASIA", "SOBRENATURAL", "ROMANCE", "HAREM"],
-        "imagen": "./image/PortadaMaouNaOre.jpg",
+        "imagen": "10EW3gIchCqQsqqELepIdW3xursGrxvpr",
         "nombre": "Maou Na Ore",
         "resumen": "Kusumi Chiharu es un joven pervertido que un día le llegó un mensaje diciéndole que fue seleccionado para ser un Monster Tamer, por lo tanto tiene que elegir a su pareja. Al creer que este mensaje es solo una broma lo ignora, hasta que recibe un enorme paquete en la puerta de su casa, el cual abre sin pensarlo dos veces creyendo que son las revistas porno que ordenó, pero en su lugar en el interior del paquete se encuentra una joven en ropa interior, que al ser vista por Chiharu se avergüenza pensando que su dueño sería una mujer, ella dice ser un Ghoul llamado Zonmi y que a partir de ahora será su compañera de pelea. Por otro lado, dentro de su escuela hay muchas chicas monstruo que quieren ser su compañero y terminarán luchando para quedarse con él.",
         "valor": "",
@@ -809,7 +809,7 @@ export const librosNovela = [
     },
     //021Sousei No Onmyouji
     {
-        "id": "Novela21",
+        "id": "21SouseiNoOnmyouji",
         "generos": ["ACCION", "DRAMA", "FANTASIA", "ROMANCE", "COMEDIA"],
         "imagen": "17bN-zCbKdRhKRvnKI6CxaDequqMEZbdr",
         "nombre": "Sousei No Onmyouji",
@@ -1152,9 +1152,9 @@ export const librosNovela = [
     },
     //022Shinchou Yuusha
     {
-        "id": "Novela22",
+        "id": "22ShinchouYuusha",
         "generos": ["COMEDIA", "ISEKAI", "FANTASIA"],
-        "imagen": "./image/PortadaShinchouYuusha.jpg",
+        "imagen": "1xn9A_euM-EfhTGa6VstF8fqW23Zw2Sh5",
         "nombre": "Shinchou Yuusha",
         "resumen": "Ristarte es una diosa novata, quién está a cargo de salvar el mundo de Gaelbarde de un Rey Demonio, por lo que debe invocar a un héroe humano. El mundo de Gaelbarde es de clase S, por lo que es extremadamente peligroso, tanto que Ristarte es prudente en seleccionar a un héroe que sea capaz de prevalecer contra los enemigos. Resuelve esto encontrando a Seiya Ryuguin, cuyas estadísticas son muchas veces más grandes que las de cualquier otro contendiente. Desafortunadamente, al invocarlo, Ristarte encuentra para su consternación que él es ridículamente cauteloso ante todo, ¡incluida ella! Al negarse incluso a entrar en las áreas más seguras de Gaelbarde hasta que se haya entrenado a un nivel con el que se sienta cómodo, la reticencia de Seiya vuelve loca a Rista. Sin embargo, cuando finalmente pisan Gaelbarde, los eventos pueden probar que la precaución de Seiya está bien justificada.",
         "valor": "",
@@ -1181,9 +1181,9 @@ export const librosNovela = [
     },
     //023Darling in the FranXX
     {
-        "id": "Novela23",
+        "id": "23DarlingInTheFranXX",
         "generos": ["MECHA", "COMEDIA", "DRAMA", "ACCION"],
-        "imagen": "./image/PortadaDarlingintheFranXX.jpg",
+        "imagen": "1rDfvNwPEnYz4KxNPToanWvMyIx1w4Izr",
         "nombre": "Darling in the FranXX",
         "resumen": "Dentro de la ciudad futurista, niños piloto son entrenados dentro de la llamada Mistilteinn, sin saber nada del mundo exterior. Estos pequeños pilotos son mandados a misiones dentro de robots llamados FRANXX para combatir a un misterioso enemigo en forma de gigantes.",
         "valor": "",
@@ -1216,9 +1216,9 @@ export const librosNovela = [
     },
     //024Guilty Crown
     {
-        "id": "Novela24",
+        "id": "24GuiltyCrown",
         "generos": ["ACCION", "FICCION"],
-        "imagen": "./image/PortadaGuiltyCrown.jpg",
+        "imagen": "1YEK7TE4v8GbH9Z98TmNjkBcwrxXozdX-",
         "nombre": "Guilty Crown",
         "resumen": "La historia de Guilty Crown empieza en el 2029 cuando el virus extraterrestre llamado Apocalipsis se extiende y hunde Japón en un estado de caos conocido como Lost Christmas (La Navidad Perdida). Después de la tragedia una organización internacional conocida como GHQ (Cuartel General) interviene aplicando la ley marcial y restaura el orden a Japón a costa de su independencia.",
         "valor": "",
@@ -1397,9 +1397,9 @@ export const librosNovela = [
     },
     //025Rakudai Kishi no Cavalry
     {
-    "id": "Novela25",
+    "id": "25RakudaiKishiNoCavalry",
         "generos": ["ACCION", "COMEDIA", "ECCHI", "FANTASIA", "ROMANCE"],
-        "imagen": "./image/PortadaRakudaiKishinoCavalry.jpg",
+        "imagen": "1RxSk7_Ru0C8X--cOyGOXiOwOvBT13EoG",
         "nombre": "Rakudai Kishi no Cavalry",
         "resumen": "Es un festival anual celebrado entre las siete academias de Blazers en Japón para determinar al aprendiz de caballero más fuerte. El ganador del festival será conocido como el Rey de la Espada de Siete Estrellas. Yudai Moroboshi ganó este festival los últimos dos años de manera consecutiva.",
         "valor": "",
@@ -1426,9 +1426,9 @@ export const librosNovela = [
     },
     //026Takt Op. Destiny
     {
-        "id": "Novela26",
+        "id": "26TaktOpDestiny",
             "generos": ["ACCION", "AVENTURA", "FANTASIA"],
-            "imagen": "./image/PortadaTaktOp.Destiny.jpg",
+            "imagen": "1re80toqmklAyvKbbYRdhdjSyC0kipSFN",
             "nombre": "Takt Op. Destiny",
             "resumen": "Un día un meteorito negro cayó sobre la Tierra, y el mundo cambió. El meteorito produjo grotescos monstruos llamados D2, que conquistaron el Mundo. Prohibieron la música, ya que es lo único que parece afectarles. Un grupo de jóvenes chicas se rebelan contra ellos usando el poder del la música, el 'Musicart'.",
             "valor": "",
@@ -1455,9 +1455,9 @@ export const librosNovela = [
     },
     //027High School of the Dead
     {
-        "id": "Novela27",
+        "id": "27HighSchoolOfTheDead",
             "generos": ["ACCION", "HORROR"],
-            "imagen": "./image/PortadaHighSchooloftheDead.jpg",
+            "imagen": "1pwk3tblwDAuqWhJNbChuY2ERsWm-isQT",
             "nombre": "High School of the Dead",
             "resumen": "Todo comienza como un día más en el Instituto Fujimi hasta que a media mañana el centro es alcanzado por los efectos de una devastadora epidemia que se propaga rápidamente convirtiendo a la población en muertos vivientes sedientos de sangre. Mientras profesores y compañeros se devoran los unos a los otros a su alrededor, un grupo reducido de estudiantes logran salir con vida del centro solo para descubrir que el apocalipsis se extiende por las calles. Takashi Komuro, que hasta entonces había sido un estudiante normal y corriente, se convierte en el líder de un improvisado grupo cuyos miembros pondrán sus diferentes habilidades al servicio de la supervivencia mientras tratan de averiguar por qué el mundo tal y como lo conocían ha llegado a su fin.",
             "valor": "",
@@ -1483,9 +1483,44 @@ export const librosNovela = [
                 "HISTORIA 1": "",
             },
     },
-    //028.Vanitas no Carte
+    //028High School Dxd
     {
-        "id": "28VanitasNoCarte",
+        "id": "28HighSchoolDxd",
+            "generos": [],
+            "imagen": "1W7FAa2L2pxUPjjsalhE5CravekSjU6sz",
+            "nombre": "",
+            "resumen": "",
+            "valor": "",
+            "ContenidoAnime": {
+                "CAPITULO 1": [1,""],
+                "CAPITULO 2": [1,""],
+                "CAPITULO 3": [1,""],
+                "CAPITULO 4": [1,""],
+                "CAPITULO 5": [1,""],
+                "CAPITULO 6": [1,""],
+                "CAPITULO 7": [1,""],
+                "CAPITULO 8": [1,""],
+                "CAPITULO 9": [1,""],
+                "CAPITULO 10": [1,""],
+                "CAPITULO 11": [1,""],
+                "CAPITULO 12": [1,""],
+            },
+            "ContenidoManga": {
+                "TOMO 1": "",
+            },
+            "ContenidoNovela": {
+                "VOLUMEN 1": "", 
+            },
+            "ContenidoPelicula": {
+                "PELICULA 1": "",
+            },
+            "ContenidoDoujinshi": {
+                "HISTORIA 1": "",
+            },
+    },
+    //029Vanitas no Carte
+    {
+        "id": "29VanitasNoCarte",
             "generos": ["FANTASIA","SOBRENATURAL"],
             "imagen": "1toInl1B5fwQDc6aOkIzwgXw3c1077tZU",
             "nombre": "Vanitas No Carte",
@@ -1650,9 +1685,9 @@ export const librosNovela = [
                 "HISTORIA 1": "",
             },
     },
-    //029
+    //030Akame Ga Kill
     {
-        "id": "29AkameGaKill",
+        "id": "30AkameGaKill",
             "generos": ["ACCION","ROMANCE","AVENTURA","DRAMA"],
             "imagen": "1wKtw7Gjlskoaa4SPmpFm5cX3cEAr8aIX",
             "nombre": "AKAME GA KILL",
@@ -1906,9 +1941,9 @@ export const librosNovela = [
                 "HISTORIA 1": "",
             },
     },
-    //030
+    //031
     {
-        "id": "Novela29",
+        "id": "Novela31",
             "generos": [],
             "imagen": "./image/Portada.jpg",
             "nombre": "",
