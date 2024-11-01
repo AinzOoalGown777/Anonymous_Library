@@ -43,8 +43,6 @@
 
         let idArchivo = obtenerParametroConsulta('idArchivo');
         let valor = obtenerParametroConsulta('valor');
-        let libro = librosNovela.find(libro => libro.id === 'Novela1'); // Suponiendo que trabajas con el primer libro para este ejemplo
-        let contenido = libro.ContenidoAnime; // Ajustar según el tipo de contenido que estás manejando
 
         document.addEventListener('DOMContentLoaded', function () {
             establecerTituloPelicula(valor);
