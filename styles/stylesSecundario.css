@@ -51,6 +51,9 @@ p {
 
 .pdf-buttons-container {
     margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .pdf-buttons-container .tipo-contenido {
@@ -62,7 +65,7 @@ p {
     font-size: 1.2em;
 }
 
-.pdf-buttons-container .tipo-contenido .buttons-row {
+.pdf-buttons-container .buttons-row {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -105,6 +108,23 @@ p {
     border-radius: 5px;
 }
 
+.pdf-buttons-container .pdf-button .button-name {
+    position: absolute;
+    bottom: 10px; 
+    left: 50%;
+    transform: translateX(-50%);
+    color: white; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 5px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pdf-buttons-container .pdf-button:hover .button-name {
+    opacity: 1;
+}
+
 .pdf-buttons-container .pdf-button .tooltip {
     display: none;
     background-color: rgba(0, 0, 0, 0.8);
@@ -138,50 +158,6 @@ p {
     border-radius: 5px;
 }
 
-.pdf-buttons-container .pdf-button .ghost-div {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    font-size: 14px;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    white-space: normal;
-    z-index: 2;
-    overflow-wrap: break-word;
-}
-
-.pdf-buttons-container .pdf-button:hover .ghost-div {
-    display: block;
-}
-
-.pdf-buttons-container .pdf-button:hover .button-name {
-    display: none;
-}
-
-.pdf-buttons-container .pdf-button .button-name {
-    display: block;
-}
-.manga-style .pdf-button {
-    height: 280px; /* Aumenta la altura de los botones de manga */
-}
-
-.manga-style .pdf-button img {
-    max-height: 120px; /* Ajusta la altura máxima de la imagen si es necesario */
-}
-
-.pdf-buttons-container .pdf-button img {
-    max-width: 100%;   /* Mantiene la imagen dentro del ancho del botón */
-    height: auto;      /* Mantiene la proporción de la imagen */
-    max-height: 260px; /* Aumenta la altura máxima de la imagen */
-    object-fit: cover; /* Cubre el área asignada manteniendo la proporción */
-    border-radius: 5px; /* Redondea las esquinas de la imagen */
-}
 
 .row {
     display: flex;
@@ -250,28 +226,6 @@ p {
     justify-content: center;
 }
 
-.pdf-button {
-    width: 150px;
-    height: 100px;
-    margin: 5px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease;
-}
-
-.pdf-button:hover {
-    transform: scale(1.05);
-}
-
-.pdf-buttons-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 #botonesContenido {
     display: flex;
     justify-content: center;
@@ -294,4 +248,31 @@ button {
 button:hover {
     background-color: #1ABC9C;
     transform: scale(1.05);
+}
+
+.texto-capitulo {
+    margin-top: 5px;
+    color: #000; /* Texto negro */
+    font-size: 14px; 
+    position: absolute; 
+    top: 50%; /* Mantener centrado verticalmente */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrar horizontalmente y verticalmente */
+    z-index: 1; 
+    display: none; 
+    text-align: center; /* Centrar el texto */
+    max-width: 150px; /* Ajustar según el tamaño deseado */
+    white-space: normal; /* Permite que el texto use varias líneas */
+    word-wrap: break-word; /* Permite que el texto se divida en la siguiente línea */
+    font-weight: bold; /* Hacer el texto más grueso */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con un poco de transparencia */
+    border-radius: 5px; /* Bordes redondeados para el fondo */
+    padding: 5px; /* Espacio alrededor del texto */
+}
+.manga-style .pdf-button {
+    height: 280px; 
+}
+
+.manga-style .pdf-button img {
+    max-height: 270px; 
 }

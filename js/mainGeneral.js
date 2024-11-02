@@ -86,7 +86,6 @@ function organizarLibrosEnEstante(libros, bookShelf, generoSeleccionado = '') {
     }
 }
 
-
 function mostrarGenero(libros, bookShelf, genero) {
     const generoElemento = document.createElement('div');
     generoElemento.classList.add('genre-row');

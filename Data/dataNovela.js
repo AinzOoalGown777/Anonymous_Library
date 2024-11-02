@@ -633,7 +633,7 @@ export const librosNovela = [
             "TOMO 3": [5,"12q8tqh4XxWUHqIOXwXeJM5rQtUWBE8FX"],
         },
     },
-    //014Classroom of the Elite
+    //014Classroom Of The Elite
     {
         "id": "14ClassroomOfTheElite",
         "generos": ["COMEDIA", "DRAMA", "ACCION"],
@@ -1179,7 +1179,7 @@ export const librosNovela = [
             "HISTORIA 1": "",
         },
     },
-    //023Darling in the FranXX
+    //023Darling In The FranXX
     {
         "id": "23DarlingInTheFranXX",
         "generos": ["MECHA", "COMEDIA", "DRAMA", "ACCION"],
@@ -1518,7 +1518,7 @@ export const librosNovela = [
                 "HISTORIA 1": "",
             },
     },
-    //029Vanitas no Carte
+    //029Vanitas No Carte
     {
         "id": "29VanitasNoCarte",
             "generos": ["FANTASIA","SOBRENATURAL"],
@@ -1943,37 +1943,51 @@ export const librosNovela = [
     },
     //031
     {
-        "id": "Novela31",
+        "id": "",
             "generos": [],
-            "imagen": "./image/Portada.jpg",
+            "imagen": "",
             "nombre": "",
             "resumen": "",
             "valor": "",
             "ContenidoAnime": {
-                "CAPITULO 1": [1,""],
-                "CAPITULO 2": [1,""],
-                "CAPITULO 3": [1,""],
-                "CAPITULO 4": [1,""],
-                "CAPITULO 5": [1,""],
-                "CAPITULO 6": [1,""],
-                "CAPITULO 7": [1,""],
-                "CAPITULO 8": [1,""],
-                "CAPITULO 9": [1,""],
-                "CAPITULO 10": [1,""],
-                "CAPITULO 11": [1,""],
-                "CAPITULO 12": [1,""],
+                "CAPITULO 1": {
+                    "numero": 1,
+                    "codigo": "",
+                    "texto": "",
+                    "imagen": ""
+                },
             },
             "ContenidoManga": {
-                "TOMO 1": "",
+                "TOMO 1":{
+                    "numero": 2,
+                    "codigo": "",
+                    "texto": "",
+                    "imagen": ""
+                },
             },
             "ContenidoNovela": {
-                "VOLUMEN 1": "", 
+                "VOLUMEN 1": {
+                    "numero": 2,
+                    "codigo": "",
+                    "texto": "",
+                    "imagen": ""
+                }, 
             },
             "ContenidoPelicula": {
-                "PELICULA 1": "",
+                "PELICULA 1": {
+                    "numero": 1,
+                    "codigo": "",
+                    "texto": "",
+                    "imagen": ""
+                },
             },
             "ContenidoDoujinshi": {
-                "HISTORIA 1": "",
+                "HISTORIA 1": {
+                    "numero": 2,
+                    "codigo": "",
+                    "texto": "",
+                    "imagen": ""
+                },
             },
     },
 ];

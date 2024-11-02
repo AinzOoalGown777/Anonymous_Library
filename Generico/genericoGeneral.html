@@ -89,15 +89,31 @@
         function crearPdfButton(numero, codigo, texto, imagenSrc, tipoContenido, clave) {
             const divContenido = document.createElement('div');
             divContenido.classList.add('pdf-button');
+        
             const img = document.createElement('img');
             const googleDriveId = imagenSrc;
             img.src = `https://lh3.googleusercontent.com/d/${googleDriveId}`;
             img.alt = tipoContenido;
+        
             const nombreDiv = document.createElement('div');
             nombreDiv.textContent = clave;
             nombreDiv.classList.add('button-name');
+        
+            const textoDiv = document.createElement('div');
+            textoDiv.textContent = texto; // Contiene el texto del capítulo
+            textoDiv.classList.add('texto-capitulo');
+            textoDiv.style.display = 'none'; // Inicialmente oculto
+        
+            const imagenCapitulo = document.createElement('img');
+            imagenCapitulo.src = `https://lh3.googleusercontent.com/d/${googleDriveId}`; // Usar la misma imagen
+            imagenCapitulo.alt = tipoContenido;
+            imagenCapitulo.classList.add('imagen-capitulo');
+            imagenCapitulo.style.display = 'none'; // Inicialmente oculto
+        
             divContenido.appendChild(img);
             divContenido.appendChild(nombreDiv);
+            divContenido.appendChild(textoDiv);
+        
             divContenido.addEventListener('click', function () {
                 switch (numero) {
                     case 1:
@@ -118,8 +134,19 @@
                 }
             });
         
+            divContenido.addEventListener('mouseenter', function () {
+                imagenCapitulo.style.display = 'block'; // Mostrar la imagen al pasar el mouse
+                textoDiv.style.display = 'block'; // Mostrar el texto al pasar el mouse
+            });
+        
+            divContenido.addEventListener('mouseleave', function () {
+                imagenCapitulo.style.display = 'none'; // Ocultar la imagen al salir el mouse
+                textoDiv.style.display = 'none'; // Ocultar el texto al salir el mouse
+            });
+        
             return divContenido;
         }
+        
     </script>
 </body>
 </html>
