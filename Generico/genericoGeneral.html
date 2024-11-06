@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/stylesSecundario.css">
-</head>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="" id="ogUrl"> <!-- URL dinámica -->
+    <meta property="og:title" content="" id="ogTitle"> <!-- Título dinámico -->
+    <meta property="og:description" content="" id="ogDescription"> <!-- Descripción dinámica -->
+    <meta property="og:image" content="" id="ogImage"> <!-- Imagen dinámica -->
+</head>    
 <body>
     <div id="informacionLibro" class="libro-container">
-        <div class="imagen-container">
-            <img src="" id="imagenLibro">
-        </div>
-        <div class="informacion-container">
-            <h2 id="nombreLibro"></h2>
-            <p id="estadoLibro"></p>
-            <p id="tomosLibro"></p>
-            <p id="resumenLibro"></p>
-            <div id="botonesContenido" class="botones-contenido">
-                <button id="btnAnime">Anime</button>
-                <button id="btnManga">Manga</button>
-                <button id="btnNovela">Novela</button>
-                <button id="btnPelicula">Película</button>
-                <button id="btnDoujinshi">Doujinshi</button>
-            </div>
-            <div id="pdfButtons" class="pdf-buttons-container buttons-row"></div>
+        <h2 id="nombreLibro"></h2>
+        <p id="resumenLibro"></p>
+        <div id="botonesContenido" class="botones-contenido">
+            <button id="btnAnime">Anime</button>
+            <button id="btnManga">Manga</button>
+            <button id="btnNovela">Novela</button>
+            <button id="btnPelicula">Película</button>
+            <button id="btnDoujinshi">Doujinshi</button>
         </div>
     </div>
+    <img src="" id="imagenLibro" class="imagen-fondo">
+    <div id="pdfButtons" class="pdf-buttons-container buttons-row"></div>
     <script type="module">
         import { librosNovela } from '../Data/dataNovela.js';
 
@@ -39,15 +40,24 @@
         });
 
         function mostrarInformacionLibro(libro) {
+            // Rellenar la información del libro
             document.getElementById('nombreLibro').textContent = libro.nombre;
             document.title = libro.nombre;
             let imagenLibro = document.getElementById('imagenLibro');
-            const googleDriveId = libro.imagen;
+            const googleDriveId = libro.imagenInterior;
             imagenLibro.src = `https://lh3.googleusercontent.com/d/${googleDriveId}`;
             imagenLibro.alt = libro.nombre;
-            document.getElementById('resumenLibro').textContent = `Resumen: ${libro.resumen}`;
+            document.getElementById('resumenLibro').textContent = libro.resumen;
+        
+            // Rellenar las metaetiquetas Open Graph
+            document.getElementById('ogUrl').content = window.location.href; // La URL actual
+            document.getElementById('ogTitle').content = libro.nombre; // Título del libro
+            document.getElementById('ogDescription').content = libro.resumen; // Descripción del libro
+            document.getElementById('ogImage').content = `https://lh3.googleusercontent.com/d/${googleDriveId}`; // Imagen de Google Drive
+        
             configurarBotones(libro);
         }
+        
 
         function configurarBotones(libro) {
             document.getElementById('btnAnime').addEventListener('click', function () {
@@ -67,24 +77,37 @@
             });
         }
 
+        let currentIndex = 0;
+
         function mostrarContenido(tipoContenido, libro) {
             const pdfButtonsContainer = document.getElementById('pdfButtons');
-            pdfButtonsContainer.innerHTML = ''; 
+            pdfButtonsContainer.innerHTML = '';
+        
+            let maxVisibleItems;
+        
             if (tipoContenido === 'ContenidoManga') {
+                maxVisibleItems = 6;
+                pdfButtonsContainer.classList.remove('anime-style');
                 pdfButtonsContainer.classList.add('manga-style');
             } else {
+                maxVisibleItems = 8;
                 pdfButtonsContainer.classList.remove('manga-style');
+                pdfButtonsContainer.classList.add('anime-style');
             }
-            const contenidoSeleccionado = libro[tipoContenido];
-            if (contenidoSeleccionado) {
-                Object.keys(contenidoSeleccionado).forEach(clave => {
-                    const { numero, codigo, texto, imagen } = contenidoSeleccionado[clave];
-                    const divContenido = crearPdfButton(numero, codigo, texto, imagen, tipoContenido.replace('Contenido', ''), clave);
-                    pdfButtonsContainer.appendChild(divContenido);
-                });
-            }
-        }
         
+            const contenidoSeleccionado = libro[tipoContenido];
+            const items = Object.keys(contenidoSeleccionado).map(clave => {
+                const { numero, codigo, texto, imagen } = contenidoSeleccionado[clave];
+                return crearPdfButton(numero, codigo, texto, imagen, tipoContenido.replace('Contenido', ''), clave);
+            });
+        
+            function actualizarBotones() {
+                pdfButtonsContainer.innerHTML = '';
+                const visibleItems = items.slice(currentIndex, currentIndex + maxVisibleItems);
+                visibleItems.forEach(item => pdfButtonsContainer.appendChild(item));
+            }
+            actualizarBotones();
+        }
 
         function crearPdfButton(numero, codigo, texto, imagenSrc, tipoContenido, clave) {
             const divContenido = document.createElement('div');

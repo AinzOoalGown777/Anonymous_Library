@@ -12,14 +12,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             height: 100vh;
             background-color: black;
             font-family: Arial, sans-serif;
         }
         #video-container {
             position: relative;
-            width: 100%;
-            height: 100%;
+            width: 80%;
+            height: 80%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -32,21 +33,53 @@
             height: 100%;
             border: none;
         }
+        #button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin-top: 10px;
+        }
+        .episode-button {
+            padding: 15px 30px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .episode-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        .episode-button:active {
+            transform: translateY(1px);
+        }
     </style>
 </head>
 <body>
     <div id="video-container">
         <iframe id="video-viewer" allowfullscreen></iframe>
     </div>
+    <div id="button-container">
+        <button id="previous-episode-btn" class="episode-button">Episodio Anterior</button>
+        <button id="next-episode-btn" class="episode-button">Siguiente Episodio</button>
+    </div>
     <script type="module">
         import { librosNovela } from '../Data/dataNovela.js';
 
         let idArchivo = obtenerParametroConsulta('idArchivo');
         let valor = obtenerParametroConsulta('valor');
-        
+        let tipoContenido = obtenerParametroConsulta('tipo') || 'CAPITULO';
+        let episodioActual = parseInt(obtenerParametroConsulta('episodio')) || 1;
+
         document.addEventListener('DOMContentLoaded', function () {
             establecerTituloPelicula(valor);
             mostrarVideo(idArchivo);
+            document.getElementById('next-episode-btn').addEventListener('click', avanzarSiguienteEpisodio);
+            document.getElementById('previous-episode-btn').addEventListener('click', retrocederEpisodio);
         });
 
         function establecerTituloPelicula(valor) {
@@ -62,14 +95,38 @@
             return urlParams.get(nombre);
         }
 
-        function generarEnlaceDrive(idArchivo) {
-            return 'https://drive.google.com/file/d/' + idArchivo + '/preview';
+        function generarEnlaceDrive(codigo) {
+            return 'https://drive.google.com/file/d/' + codigo + '/preview';
         }
 
-        function mostrarVideo(idArchivo) {  
+        function mostrarVideo(codigo) {  
             var videoViewer = document.getElementById('video-viewer');
-            videoViewer.src = generarEnlaceDrive(idArchivo);
-            window.history.pushState({}, '', `?idArchivo=${idArchivo}&valor=${valor}`);
+            videoViewer.src = generarEnlaceDrive(codigo);
+            window.history.pushState({}, '', `?idArchivo=${codigo}&valor=${valor}&episodio=${episodioActual}&tipo=${tipoContenido}`);
+        }
+
+        function avanzarSiguienteEpisodio() {
+            episodioActual++;
+            cargarEpisodio();
+        }
+
+        function retrocederEpisodio() {
+            if (episodioActual > 1) {
+                episodioActual--;
+                cargarEpisodio();
+            } else {
+                alert('Ya estás en el primer episodio.');
+            }
+        }
+
+        function cargarEpisodio() {
+            const siguienteContenido = `${tipoContenido} ${episodioActual}`;
+            const anime = librosNovela.find(libro => libro.id === '1Another');
+
+            if (anime && anime.ContenidoAnime[siguienteContenido]) {
+                const nuevoCodigo = anime.ContenidoAnime[siguienteContenido].codigo;
+                mostrarVideo(nuevoCodigo);
+            } 
         }
     </script>
 </body>
