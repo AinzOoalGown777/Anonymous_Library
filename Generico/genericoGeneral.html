@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/stylesSecundario.css">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="" id="ogUrl"> <!-- URL dinámica -->
-    <meta property="og:title" content="" id="ogTitle"> <!-- Título dinámico -->
-    <meta property="og:description" content="" id="ogDescription"> <!-- Descripción dinámica -->
-    <meta property="og:image" content="" id="ogImage"> <!-- Imagen dinámica -->
-</head>    
+</head>
 <body>
     <div id="informacionLibro" class="libro-container">
         <h2 id="nombreLibro"></h2>
@@ -24,6 +17,8 @@
     </div>
     <img src="" id="imagenLibro" class="imagen-fondo">
     <div id="pdfButtons" class="pdf-buttons-container buttons-row"></div>
+    <div id="paginationButtons"></div>
+    <div id="pageNumbers" class="page-numbers"></div>
     <script type="module">
         import { librosNovela } from '../Data/dataNovela.js';
 
@@ -35,12 +30,15 @@
             const urlParams = new URLSearchParams(window.location.search);
             const idLibro = urlParams.get('id');
             const libro = buscarLibroPorId(idLibro);
-            mostrarInformacionLibro(libro);
-            mostrarContenido('ContenidoAnime', libro);
+            if (libro) {
+                mostrarInformacionLibro(libro);
+                mostrarContenido('ContenidoAnime', libro);
+            } else {
+                console.error('El libro no se encontró.');
+            }
         });
 
         function mostrarInformacionLibro(libro) {
-            // Rellenar la información del libro
             document.getElementById('nombreLibro').textContent = libro.nombre;
             document.title = libro.nombre;
             let imagenLibro = document.getElementById('imagenLibro');
@@ -48,16 +46,8 @@
             imagenLibro.src = `https://lh3.googleusercontent.com/d/${googleDriveId}`;
             imagenLibro.alt = libro.nombre;
             document.getElementById('resumenLibro').textContent = libro.resumen;
-        
-            // Rellenar las metaetiquetas Open Graph
-            document.getElementById('ogUrl').content = window.location.href; // La URL actual
-            document.getElementById('ogTitle').content = libro.nombre; // Título del libro
-            document.getElementById('ogDescription').content = libro.resumen; // Descripción del libro
-            document.getElementById('ogImage').content = `https://lh3.googleusercontent.com/d/${googleDriveId}`; // Imagen de Google Drive
-        
             configurarBotones(libro);
         }
-        
 
         function configurarBotones(libro) {
             document.getElementById('btnAnime').addEventListener('click', function () {
@@ -78,13 +68,13 @@
         }
 
         let currentIndex = 0;
+        let maxVisibleItems = 8;
+        let items = [];
 
         function mostrarContenido(tipoContenido, libro) {
             const pdfButtonsContainer = document.getElementById('pdfButtons');
             pdfButtonsContainer.innerHTML = '';
-        
-            let maxVisibleItems;
-        
+
             if (tipoContenido === 'ContenidoManga') {
                 maxVisibleItems = 6;
                 pdfButtonsContainer.classList.remove('anime-style');
@@ -94,82 +84,142 @@
                 pdfButtonsContainer.classList.remove('manga-style');
                 pdfButtonsContainer.classList.add('anime-style');
             }
-        
+
             const contenidoSeleccionado = libro[tipoContenido];
-            const items = Object.keys(contenidoSeleccionado).map(clave => {
+            items = Object.keys(contenidoSeleccionado).map(clave => {
                 const { numero, codigo, texto, imagen } = contenidoSeleccionado[clave];
                 return crearPdfButton(numero, codigo, texto, imagen, tipoContenido.replace('Contenido', ''), clave);
             });
-        
-            function actualizarBotones() {
-                pdfButtonsContainer.innerHTML = '';
-                const visibleItems = items.slice(currentIndex, currentIndex + maxVisibleItems);
-                visibleItems.forEach(item => pdfButtonsContainer.appendChild(item));
-            }
+
+            crearBotonesPaginacion();
             actualizarBotones();
+        }
+
+        function crearBotonesPaginacion() {
+            const totalPages = Math.ceil(items.length / maxVisibleItems);
+            const pageNumbersContainer = document.getElementById('pageNumbers');
+            pageNumbersContainer.innerHTML = '';
+
+            for (let i = 1; i <= totalPages; i++) {
+                const pageButton = document.createElement('button');
+                pageButton.textContent = i;
+                pageButton.addEventListener('click', function () {
+                    currentIndex = (i - 1) * maxVisibleItems;
+                    actualizarBotones();
+                    actualizarBotonActivo(i);
+                });
+                pageNumbersContainer.appendChild(pageButton);
+            }
+        }
+
+        function actualizarBotonActivo(page) {
+            const buttons = document.querySelectorAll('.page-numbers button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            if (buttons[page - 1]) {
+                buttons[page - 1].classList.add('active');
+            }
+        }
+
+        function actualizarBotones() {
+            const pdfButtonsContainer = document.getElementById('pdfButtons');
+            pdfButtonsContainer.innerHTML = '';
+            const visibleItems = items.slice(currentIndex, currentIndex + maxVisibleItems);
+            visibleItems.forEach(item => pdfButtonsContainer.appendChild(item));
+
+            mostrarBotonesNavegacion();
+
+            document.getElementById('btnAnterior').disabled = currentIndex === 0;
+            document.getElementById('btnSiguiente').disabled = currentIndex + maxVisibleItems >= items.length;
+        }
+
+        function mostrarBotonesNavegacion() {
+            const paginationContainer = document.getElementById('paginationButtons');
+            paginationContainer.innerHTML = '';
+
+            const prevButton = document.createElement('button');
+            prevButton.id = 'btnAnterior';
+            prevButton.textContent = '<';
+            prevButton.disabled = currentIndex === 0;
+            prevButton.addEventListener('click', function () {
+                if (currentIndex > 0) {
+                    currentIndex -= maxVisibleItems;
+                    actualizarBotones();
+                    actualizarBotonActivo(Math.ceil(currentIndex / maxVisibleItems) + 1);
+                }
+            });
+
+            const nextButton = document.createElement('button');
+            nextButton.id = 'btnSiguiente';
+            nextButton.textContent = '>';
+            nextButton.disabled = currentIndex + maxVisibleItems >= items.length;
+            nextButton.addEventListener('click', function () {
+                if (currentIndex + maxVisibleItems < items.length) {
+                    currentIndex += maxVisibleItems;
+                    actualizarBotones();
+                    actualizarBotonActivo(Math.ceil(currentIndex / maxVisibleItems) + 1);
+                }
+            });
+
+            paginationContainer.appendChild(prevButton);
+            paginationContainer.appendChild(nextButton);
         }
 
         function crearPdfButton(numero, codigo, texto, imagenSrc, tipoContenido, clave) {
             const divContenido = document.createElement('div');
             divContenido.classList.add('pdf-button');
-        
+
             const img = document.createElement('img');
             const googleDriveId = imagenSrc;
             img.src = `https://lh3.googleusercontent.com/d/${googleDriveId}`;
             img.alt = tipoContenido;
-        
+
             const nombreDiv = document.createElement('div');
             nombreDiv.textContent = clave;
             nombreDiv.classList.add('button-name');
-        
+
             const textoDiv = document.createElement('div');
-            textoDiv.textContent = texto; // Contiene el texto del capítulo
+            textoDiv.textContent = texto;
             textoDiv.classList.add('texto-capitulo');
-            textoDiv.style.display = 'none'; // Inicialmente oculto
-        
+            textoDiv.style.display = 'none';
+
             const imagenCapitulo = document.createElement('img');
-            imagenCapitulo.src = `https://lh3.googleusercontent.com/d/${googleDriveId}`; // Usar la misma imagen
+            imagenCapitulo.src = `https://lh3.googleusercontent.com/d/${googleDriveId}`;
             imagenCapitulo.alt = tipoContenido;
             imagenCapitulo.classList.add('imagen-capitulo');
-            imagenCapitulo.style.display = 'none'; // Inicialmente oculto
-        
+            imagenCapitulo.style.display = 'none';
+
             divContenido.appendChild(img);
             divContenido.appendChild(nombreDiv);
             divContenido.appendChild(textoDiv);
-        
+
             divContenido.addEventListener('click', function () {
                 switch (numero) {
                     case 1:
                         window.location.href = `./genericoVideo.html?idArchivo=${codigo}&valor=${numero}`;
                         break;
                     case 2:
-                        window.location.href = `./genericoLectura.html?idArchivo=${codigo}&valor=${numero}`;
-                        break;
                     case 3:
+                    case 5:
                         window.location.href = `./genericoLectura.html?idArchivo=${codigo}&valor=${numero}`;
                         break;
                     case 4:
                         window.location.href = `./genericoVideo.html?idArchivo=${codigo}&valor=${numero}`;
                         break;
-                    case 5:
-                        window.location.href = `./genericoLectura.html?idArchivo=${codigo}&valor=${numero}`;
-                        break;
                 }
             });
-        
+
             divContenido.addEventListener('mouseenter', function () {
-                imagenCapitulo.style.display = 'block'; // Mostrar la imagen al pasar el mouse
-                textoDiv.style.display = 'block'; // Mostrar el texto al pasar el mouse
+                imagenCapitulo.style.display = 'block';
+                textoDiv.style.display = 'block';
             });
-        
+
             divContenido.addEventListener('mouseleave', function () {
-                imagenCapitulo.style.display = 'none'; // Ocultar la imagen al salir el mouse
-                textoDiv.style.display = 'none'; // Ocultar el texto al salir el mouse
+                imagenCapitulo.style.display = 'none';
+                textoDiv.style.display = 'none';
             });
-        
+
             return divContenido;
         }
-        
     </script>
 </body>
 </html>
