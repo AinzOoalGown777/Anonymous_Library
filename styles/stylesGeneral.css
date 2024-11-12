@@ -167,7 +167,7 @@ button:hover {
     margin-bottom: 15px;
 }
 
-#searchInput {
+#searchInput,#searchInput1 {
     flex: 1;
     padding: 10px;
     font-size: 16px;
@@ -176,11 +176,12 @@ button:hover {
     max-width: 500px;
 }
 
-#searchInput:focus {
+#searchInput,#searchInput1:focus {
     outline: none;
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
+
 
 .genre-dropdown {
     width: 100%;

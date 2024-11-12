@@ -7,22 +7,15 @@
     <div id="informacionLibro" class="libro-container">
         <h2 id="nombreLibro"></h2>
         <p id="resumenLibro"></p>
-        <div id="botonesContenido" class="botones-contenido">
-            <button id="btnAnime">Anime</button>
-            <button id="btnManga">Manga</button>
-            <button id="btnNovela">Novela</button>
-            <button id="btnPelicula">Película</button>
-            <button id="btnDoujinshi">Doujinshi</button>
-        </div>
     </div>
     <img src="" id="imagenLibro" class="imagen-fondo">
     <div id="pdfButtons" class="pdf-buttons-container buttons-row"></div>
     <div id="pageNumbers" class="page-numbers"></div>
     <script type="module">
-        import { librosNovela } from '../Data/dataNovela.js';
+        import { librosLectura } from '../Data/dataLectura.js';
 
         function buscarLibroPorId(idLibro) {
-            return librosNovela.find(libro => libro.id === idLibro);
+            return librosLectura.find(libro => libro.id === idLibro);
         }
 
         document.addEventListener('DOMContentLoaded', async function () {
@@ -31,7 +24,7 @@
             const libro = buscarLibroPorId(idLibro);
             if (libro) {
                 mostrarInformacionLibro(libro);
-                mostrarContenido('ContenidoAnime', libro);
+                mostrarContenido('ContenidoLectura', libro);
             } else {
                 console.error('El libro no se encontró.');
             }
@@ -45,44 +38,17 @@
             imagenLibro.src = `https://lh3.googleusercontent.com/d/${googleDriveId}`;
             imagenLibro.alt = libro.nombre;
             document.getElementById('resumenLibro').textContent = libro.resumen;
-            configurarBotones(libro);
-        }
-
-        function configurarBotones(libro) {
-            document.getElementById('btnAnime').addEventListener('click', function () {
-                mostrarContenido('ContenidoAnime', libro);
-            });
-            document.getElementById('btnManga').addEventListener('click', function () {
-                mostrarContenido('ContenidoManga', libro);
-            });
-            document.getElementById('btnNovela').addEventListener('click', function () {
-                mostrarContenido('ContenidoNovela', libro);
-            });
-            document.getElementById('btnPelicula').addEventListener('click', function () {
-                mostrarContenido('ContenidoPelicula', libro);
-            });
-            document.getElementById('btnDoujinshi').addEventListener('click', function () {
-                mostrarContenido('ContenidoDoujinshi', libro);
-            });
         }
 
         let currentIndex = 0;
-        let maxVisibleItems = 8;
+        let maxVisibleItems = 6;
         let items = [];
 
         function mostrarContenido(tipoContenido, libro) {
             const pdfButtonsContainer = document.getElementById('pdfButtons');
             pdfButtonsContainer.innerHTML = '';
 
-            if (tipoContenido === 'ContenidoManga') {
-                maxVisibleItems = 6;
-                pdfButtonsContainer.classList.remove('anime-style');
-                pdfButtonsContainer.classList.add('manga-style');
-            } else {
-                maxVisibleItems = 8;
-                pdfButtonsContainer.classList.remove('manga-style');
-                pdfButtonsContainer.classList.add('anime-style');
-            }
+            pdfButtonsContainer.classList.add('manga-style');
 
             const contenidoSeleccionado = libro[tipoContenido];
             items = Object.keys(contenidoSeleccionado).map(clave => {
@@ -192,19 +158,7 @@
             divContenido.appendChild(textoDiv);
 
             divContenido.addEventListener('click', function () {
-                switch (numero) {
-                    case 1:
-                        window.location.href = `./genericoVideo.html?idArchivo=${codigo}&valor=${numero}`;
-                        break;
-                    case 2:
-                    case 3:
-                    case 5:
-                        window.location.href = `./genericoLectura.html?idArchivo=${codigo}&valor=${numero}`;
-                        break;
-                    case 4:
-                        window.location.href = `./genericoVideo.html?idArchivo=${codigo}&valor=${numero}`;
-                        break;
-                }
+                window.location.href = `./genericoLectura.html?idArchivo=${codigo}&valor=${numero}`;
             });
 
             divContenido.addEventListener('mouseenter', function () {

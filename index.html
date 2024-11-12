@@ -8,19 +8,64 @@
 </head>
 <body>
     <header>
+        <button id="button1">1</button>
+        <button id="button2">2</button>
+        <button id="button3">3</button>
     </header>
     <main>
-        <section id="SeccionNovela" class="section-container" display="flex">
+        <!-- Contenido de la Sección 1 -->
+        <section id="SeccionNovela" class="section-container">
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="Buscar...">
                 <div id="NovelaGenreForm"></div>
             </div>
             <div class="book-shelf-Novela"></div>
         </section>
+
+        <!-- Contenido de la Sección 2 (oculto por defecto) -->
+        <section id="SeccionAlternativa" class="section-container" style="display: none;">
+            <div class="search-container">
+                <input type="text" id="searchInput1" placeholder="Buscar...">
+                <div id="LecturaGenreForm"></div>
+            </div>
+            <div class="book-shelf-Lectura"></div>
+        </section>
+
+        <!-- Contenido de la Sección 3 (oculto por defecto) -->
+        <section id="SeccionTercera" class="section-container" style="display: none;">
+            <div class="third-content">
+                <h2>Tercer Contenido</h2>
+                <p>Este es el contenido que se muestra al presionar el botón 3.</p>
+            </div>
+        </section>
     </main>
     <footer>
     </footer>
+    
     <script type="module" src="./Data/dataNovela.js"></script>
+    <script type="module" src="./Data/dataLectura.js"></script>
     <script type="module" src="./js/mainGeneral.js"></script>
+    <script type="module" src="./js/mainLectura.js"></script>
+    
+    <script>
+        // Función para alternar la visibilidad de las secciones
+        document.getElementById("button1").addEventListener("click", function() {
+            document.getElementById("SeccionNovela").style.display = "block";
+            document.getElementById("SeccionAlternativa").style.display = "none";
+            document.getElementById("SeccionTercera").style.display = "none";
+        });
+
+        document.getElementById("button2").addEventListener("click", function() {
+            document.getElementById("SeccionNovela").style.display = "none";
+            document.getElementById("SeccionAlternativa").style.display = "block";
+            document.getElementById("SeccionTercera").style.display = "none";
+        });
+
+        document.getElementById("button3").addEventListener("click", function() {
+            document.getElementById("SeccionNovela").style.display = "none";
+            document.getElementById("SeccionAlternativa").style.display = "none";
+            document.getElementById("SeccionTercera").style.display = "block";
+        });
+    </script>
 </body>
 </html>
