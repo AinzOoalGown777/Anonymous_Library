@@ -99,7 +99,7 @@ p {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    background: linear-gradient(135deg, #2980B9, #3498DB);
+    background: linear-gradient(135deg, #000000, #2c3e50);
     color: #ECF0F1;
     border: none;
     border-radius: 10px;
