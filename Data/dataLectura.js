@@ -100,29 +100,65 @@ export const librosLectura = [
     },
     //003
     {
-        "id": "",
-        "generos": [],
-        "imagen": "",
-        "imagenInterior": "",
-        "nombre": "",
-        "resumen": "",
+        "id": "3PervertsDailyLives",
+        "generos": ["COMEDIA","DRAMA","ECCHI","ROMANCE"],
+        "imagen": "1LdWSgCsGLS4O7P44HcGh5wkglM3r6lCT",
+        "imagenInterior": "1L6wlQMoIG5TrTNGAIaKrgKGOEJ2GjYgQ",
+        "nombre": "Perverts Daily Lives",
+        "resumen": "Continúa la historia de Jinwoo y Seyoung tras los eventos de A Perverts Daily Life. La secuela explora su vida como pareja mientras enfrentan los retos de la convivencia, situaciones cómicas y momentos íntimos. A través de eventos cotidianos, la serie combina humor, romance y un toque de drama, profundizando en el crecimiento emocional y las experiencias compartidas de los protagonistas. Ideal para quienes buscan una narrativa ligera pero envolvente sobre el amor y la vida en pareja.",
         "valor": "",
         "ContenidoLectura": {
-            "CAPITULO 1": {
-                "codigo": "",
+            "CAPITULO 0-7": {
+                "codigo": "10oziE2oFpkAWxtOxP508KCO4yNwE6k2N",
                 "texto": "",
-                "imagen": ""
+                "imagen": "1fc-6jUP1mkjOiK6SiAZSfNh3T6km7L6R"
             },
-            "CAPITULO 2": {
-                "codigo": "",
+            "CAPITULO 8-14": {
+                "codigo": "1EZzHKwDd3ovqMmTGA8kO_JKq4MYgNsao",
                 "texto": "",
-                "imagen": ""
+                "imagen": "1cDYbnT2FBNHdxF2OqzeZclxcUVJVfpzF"
             },
-            "CAPITULO 3": {
-                "codigo": "",
+            "CAPITULO 15-21": {
+                "codigo": "1IDVRFZhU7ZS9XKeIR2NlAPrafDFEZWD6",
                 "texto": "",
-                "imagen": ""
+                "imagen": "1X_SuVqHerr7Q95BOk_L8pnUPREct2h_C"
             },
+            "CAPITULO 22-28": {
+                "codigo": "1UZhctDB1elG4GIgUr3z6pwZuC_s9xNuN",
+                "texto": "",
+                "imagen": "1ZZnrkPtO8_QHgx8pwaB7bMIVWBRrx8Dg"
+            },
+            "CAPITULO 29-35": {
+                "codigo": "1rGWOqiNEtoRLiMdqXSVjAe2t4ISpdQIv",
+                "texto": "",
+                "imagen": "1c25Q7iyeDiKW80mBAUWKdJ3RhyTcGaqt"
+            },
+            "CAPITULO 36-42": {
+                "codigo": "1uUZisGD9ZfWN0gKpNglo8vmEWXeqcdH_",
+                "texto": "",
+                "imagen": "1ZnoGbgJqHx7kEoML-uEqqRsKL2To3H3-"
+            },
+            "CAPITULO 43-49": {
+                "codigo": "1d4ndTrrJJonnahBIKapvmWQbD6Ztn1Eu",
+                "texto": "",
+                "imagen": "1GnmwiNYDDhJ9xne-T2bQapcrjV5YA0Ja"
+            },
+            "CAPITULO 50-56": {
+                "codigo": "16jgibJCz_PEC7_XRv05Osbt0DsNc6LOV",
+                "texto": "",
+                "imagen": "1IRVuhryZS2QiZWSqUKLrAqLT2Yd3D678"
+            },
+            "CAPITULO 57-64": {
+                "codigo": "1LrpOO8qrR2YjvX4Gsanja_HzD1Wyh2F5",
+                "texto": "",
+                "imagen": "1r15LKB0AV4kutYBnCXBuTYAJexNTSCW7"
+            },
+            "CAPITULO 65-73": {
+                "codigo": "1X9MLJRyt63etJYtDrTo_Rxlc9TZTu5vE",
+                "texto": "",
+                "imagen": "1gWOYoG7ec1x9tiqIvYB3dLy8kSeug1VL"
+            }
+
         }
     },
 ];
